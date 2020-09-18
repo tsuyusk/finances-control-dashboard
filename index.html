@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-content">
+        <aside class="navigation-bar">
+          <img src="assets/logo.svg" alt="Logo" />
+          <nav>
+            <a href="#" class="active"
+              ><img src="assets/pie-chart.svg" alt="Charts"
+            /></a>
+            <a href="#"><img src="assets/user.svg" alt="Profile" /></a>
+            <a href="#"><img src="assets/settings.svg" alt="Settings" /></a>
+            <a href="#"><img src="assets/heart.svg" alt="Preferences" /></a>
+          </nav>
+          <button class="icon-button">
+            <img src="assets/log-out.svg" alt="Logout" />
+          </button>
+        </aside>
+
+        <main class="main-content">
+          <header>
+            <div class="input-container">
+              <button>
+                <img src="assets/search_small.svg" alt="Search" />
+              </button>
+              <input type="text" placeholder="Search" />
+            </div>
+            <div class="avatar-container">
+              <img src="assets/sample_profile_picture.svg" alt="User Avatar" />
+            </div>
+          </header>
+          <section class="greetings">
+            <h1>Hello, <span>Johnny</span></h1>
+            <h1>This is your daily transaction log</h1>
+          </section>
+          <section class="charts">
+            <ul class="small-charts">
+              <li class="navigate-to-detail-container">
+                <p>26/09 - 30/08</p>
+                <img src="assets/trending-up.svg" alt="Arrow up" />
+                <strong>Via marketplaces</strong>
+                <button>details</button>
+              </li>
+              <li class="navigate-to-detail-container">
+                <p>26/09 - 30/08</p>
+                <img src="assets/line-chart.svg" alt="Line chart" />
+                <strong>Via Credit Card</strong>
+                <button>details</button>
+              </li>
+              <li class="small-chart">
+                <div class="title">
+                  <strong>Details</strong>
+                </div>
+                <div class="chart-container">
+                  <div class="chart-legend">
+                    <p class="green">
+                      <img src="assets/clothes.svg" alt="t-shirt" />
+                      Clothes
+                    </p>
+                    <p class="blue">
+                      <img src="assets/medicine.svg" alt="Meds" />
+                      Medicine
+                    </p>
+                    <p class="red">
+                      <img src="assets/food.svg" alt="Food" />
+                      Food
+                    </p>
+                  </div>
+                  <canvas id="mini-chart" class="mini-chart"></canvas>
+                </div>
+              </li>
+            </ul>
+            <div class="main-chart">
+              <h1>
+                Mensal Billing <img src="assets/calendar.svg" alt="Calendar" />
+              </h1>
+              <div class="legends">
+                <div class="legend">
+                  <div class="rectangle -red"></div>
+                  2020
+                </div>
+                <div class="legend">
+                  <div class="rectangle -blue"></div>
+                  2019
+                </div>
+              </div>
+              <canvas id="main-chart" class="main-chart"></canvas>
+            </div>
+          </section>
+        </main>
+
+        <aside class="last-transactions-container">
+          <div class="today-data">
+            <h1>Friday, 26</h1>
+            <p>September</p>
+          </div>
+
+          <div class="table-container">
+            <h1>My Transactions</h1>
+
+            <table>
+              <thead>
+                <tr>
+                  <td>Local</td>
+                  <td>Value</td>
+                  <td>Transaction</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Clothes store</td>
+                  <td>$2000</td>
+                  <td>Social media</td>
+                </tr>
+                <tr>
+                  <td>Games Store</td>
+                  <td>$800</td>
+                  <td>Social Media</td>
+                </tr>
+                <tr>
+                  <td>Food Store</td>
+                  <td>$980</td>
+                  <td>Social Media</td>
+                </tr>
+                <tr>
+                  <td>Medicine</td>
+                  <td>$700</td>
+                  <td>Social media</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="total-daily-spend-container">
+            <h1>Total daily spend</h1>
+            <span>2000,50</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <script defer src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,467 @@
+$page-background: #393c45;
+$card-background: #2e3035;
+$theme-rose: #e95791;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+body {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 500;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+.page-content,
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+  transition: border-bottom 0.1s ease;
+  height: 32px;
+
+  > input {
+    outline: 0;
+    background: transparent;
+    border: 0;
+    padding: 0 8px;
+
+    color: #d6d1d1;
+  }
+
+  > button {
+    background: transparent;
+    border: 0;
+    width: 16px;
+    height: 16px;
+
+    > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &:focus-within {
+    border-color: $theme-rose;
+  }
+}
+
+.content {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  background: $page-background;
+}
+
+.page-content {
+  display: flex;
+  align-items: center;
+  height: 90%;
+  padding: 12px 0;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.navigation-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 80px;
+  height: 560px;
+
+  padding: 24px 0;
+  background: $card-background;
+
+  border-radius: 45px;
+
+  > nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > a {
+      img {
+        filter: brightness(100%);
+        transition: filter 0.3s ease;
+        &:hover {
+          filter: brightness(70%);
+        }
+      }
+
+      & + a {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  > button {
+    background: transparent;
+    border: 0;
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: brightness(70%);
+    }
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  margin: 0 24px;
+
+  > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 94%;
+    margin: 0 auto;
+
+    > .avatar-container {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  > .greetings {
+    margin-bottom: 36px;
+    > h1 {
+      color: #fff;
+      > span {
+        color: $theme-rose;
+      }
+    }
+  }
+
+  > .charts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    > ul {
+      display: flex;
+      justify-content: space-between;
+
+      list-style: none;
+      width: 100%;
+
+      > li {
+        box-shadow: 0 0 12px #00000029;
+
+        & + li {
+          margin-left: 8px;
+        }
+      }
+
+      > .navigate-to-detail-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background: $card-background;
+        width: 220px;
+        padding: 12px;
+        border-radius: 16px;
+
+        > p {
+          font-size: 12px;
+          color: #fff;
+        }
+
+        > img {
+          margin: 12px 0;
+          height: 34px;
+          width: 34px;
+        }
+
+        > strong {
+          color: #fff;
+          font-size: 14px;
+          margin-bottom: 8px;
+        }
+
+        > button {
+          background: $theme-rose;
+          border: 0;
+          border-radius: 10px;
+          padding: 4px 16px;
+          font-weight: 500;
+          letter-spacing: 0.2px;
+          color: #fff;
+          transition: background 0.3s ease, color 0.3s ease;
+
+          &:focus,
+          &:hover {
+            background: darken($theme-rose, 5%);
+            color: darken(#fff, 5%);
+          }
+        }
+      }
+
+      > .small-chart {
+        display: flex;
+        flex-direction: column;
+
+        background: #3b3d43;
+        width: 240px;
+        padding: 12px;
+        border-radius: 16px;
+
+        > .title {
+          display: flex;
+          font-size: 16px;
+          > strong {
+            color: #fff;
+          }
+        }
+
+        > .chart-container {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          > .chart-legend {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            > p {
+              display: flex;
+              font-size: 14px;
+
+              > img {
+                margin-right: 8px;
+              }
+
+              &.green {
+                color: #acffe3;
+              }
+              &.blue {
+                color: #889aff;
+              }
+              &.red {
+                color: #c55181;
+              }
+            }
+          }
+
+          > .mini-chart {
+            width: 160px !important;
+            height: 80px !important;
+          }
+        }
+      }
+    }
+
+    > .main-chart {
+      display: flex;
+      flex-direction: column;
+      margin-top: 12px;
+      flex: 1;
+      background: $card-background;
+
+      box-shadow: 0 0 12px #00000029;
+      border-radius: 16px;
+      padding: 16px 24px;
+
+      > h1 {
+        color: #fff;
+      }
+
+      > .legends {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+
+        > .legend {
+          display: flex;
+          align-items: center;
+          color: #fff;
+
+          > .rectangle {
+            width: 32px;
+            height: 64%;
+            border-radius: 4px;
+            margin-right: 8px;
+
+            &.-red {
+              background: #c55181;
+            }
+
+            &.-blue {
+              background: #889aff;
+            }
+          }
+
+          & + .legend {
+            margin-left: 8px;
+          }
+        }
+      }
+
+      > .main-chart {
+        margin-top: 14px;
+      }
+    }
+  }
+}
+
+.last-transactions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background: $card-background;
+
+  height: 560px;
+  padding: 24px 16px;
+  border-radius: 45px;
+
+  > .today-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > h1 {
+      color: $theme-rose;
+    }
+
+    > p {
+      font-size: 14px;
+
+      color: #fff;
+    }
+  }
+
+  > .table-container {
+    padding: 0 14px;
+    > h1 {
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    > table {
+      border-collapse: collapse;
+
+      > thead {
+        border-bottom: 6px solid $card-background;
+        > tr {
+          > td {
+            font-size: 14px;
+            color: #d6d1d1;
+          }
+        }
+      }
+
+      > tbody {
+        > tr {
+          background: #696969;
+          transition: background 0.3s ease;
+
+          > td {
+            color: #d6d1d1;
+            padding: 8px 6px;
+
+            &:first-child {
+              border-radius: 10px 0 0 10px;
+            }
+
+            &:last-child {
+              border-radius: 0 10px 10px 0;
+            }
+          }
+          &:hover {
+            background: darken(#696969, 5%);
+          }
+
+          & + tr {
+            border-top: 5px solid;
+            border-bottom: 5px solid;
+            border-color: $card-background;
+          }
+        }
+      }
+    }
+  }
+
+  > .total-daily-spend-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+    > h1 {
+      position: relative;
+      color: #fff;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 80%;
+        border-radius: 2px;
+        background: $theme-rose;
+      }
+    }
+
+    > span {
+      color: #fff;
+
+      &::before {
+        content: '$   ';
+        color: $theme-rose;
+        font-size: 12px;
+        vertical-align: top;
+      }
+    }
+  }
+}
